@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   mouseSensitivity: 200
-  minXAngle: -80
-  maxXAngle: 90
+  minXAngle: -20
+  maxXAngle: 75
 --- !u!1 &260288367
 GameObject:
   m_ObjectHideFlags: 0
