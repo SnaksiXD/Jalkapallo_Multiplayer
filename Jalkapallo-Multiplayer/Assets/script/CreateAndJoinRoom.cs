@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
 {
@@ -13,8 +14,13 @@ public class CreateAndJoinRoom : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public void CreateRoom()
     {
+        RoomOptions roomOptions = new RoomOptions();
+        ExitGames.Client.Photon.Hashtable roomCustomProps = new ExitGames.Client.Photon.Hashtable();
+        roomCustomProps.Add("BlueScore", 0);
+        roomCustomProps.Add("RedScore", 0);
+        roomOptions.CustomRoomProperties = roomCustomProps;
         //Huoneen luonti
-        PhotonNetwork.CreateRoom(createInput.text);
+        PhotonNetwork.CreateRoom(createInput.text, roomOptions);
     }
 
     public void JoinRoom()
